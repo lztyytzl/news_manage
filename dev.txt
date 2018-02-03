@@ -1,1 +1,45 @@
 ﻿我是分支dev
+
+
+
+git status
+git add --all
+git commit -m "commit"
+git status
+git push origin app_test
+
+
+工作区 --> 暂存区 --> 分支
+0. $ cat readme.txt//查看内容
+1. $ git add readme.txt  //实际上就是把文件修改添加到暂存区；
+2. $ git commit -m "wrote a readme file" //实际上就是把暂存区的所有内容提交到当前分支。
+3. $ git status
+4. $ git diff readme.txt  
+5. $ git log //git log命令显示从最近到最远的提交日志    $ git log --pretty=oneline  看得眼花缭乱的，可以试试加上--pretty=oneline参数：
+6. $ git reset --hard HEAD^//回退一个版本  上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。
+7. $ git reflog//用来记录你的每一次命令
+8. $ git reset --hard 3628164 //Git的版本回退 
+9. $ git checkout -- readme.txt //可以丢弃工作区的修改
+10.$ git reset HEAD readme.txt //用命令git reset HEAD file可以把暂存区的修改撤销掉（unstage），重新放回工作区：
+11.$ rm test.txt//删除文件 一是确实要从版本库中删除该文件，那就用命令git rm删掉，并且git commit：另一种情况是删错了，因为版本库里还有呢，所以可以很轻松地把误删的文件恢复到最新版本：$ git checkout -- test.txt
+
+
+12.$ git checkout -b dev  //创建dev分支，然后切换到dev分支：相当于以下两条命令：$ git branch dev $ git checkout dev
+13.$ git branch //git branch  //命令查看当前分支：【git branch -a 查看隐藏的分支】
+14.$ git checkout master  //切换分支
+15.$ git branch -d dev //删除分支
+16.$ git merge --no-ff -m "merge with no-ff" dev  //准备合并dev分支，请注意--no-ff参数，表示禁用Fast forward： 合并分支时，加上--no-ff参数就可以用普通模式合并，合并后的历史有分支   因为本次合并要创建一个新的commit，所以加上-m参数，把commit描述写进去
+17.$ git branch -D feature-vulcan //分支还没有被合并，如果删除，将丢失掉修改，如果要强行删除，需要使用命令git branch -D feature-vulcan。
+
+
+
+
+
+
+
+
+git push origin app_test
+
+
+
+
