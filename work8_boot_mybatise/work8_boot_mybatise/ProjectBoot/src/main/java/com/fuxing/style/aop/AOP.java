@@ -19,7 +19,9 @@ public class AOP {
 
     @Before("userService()")
     public void doBeforeAdvice(JoinPoint joinPoint){
-        logger.info("我是前置通知!!!");
+        logger.info("-----------------我是前置通知!!!info");
+        logger.debug("--------我是前置通知!!!debug");
+        logger.error("---我是前置通知!!!error");
     }
 
     @After("userService()")
